@@ -1,0 +1,209 @@
+.report-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.aphr-report {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2c3437;
+}
+
+.aphr-report section {
+  margin: 0 0 24px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.aphr-report h2 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dfe4df;
+  color: var(--teal);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.aphr-report h3 {
+  margin: 18px 0 10px;
+  color: #34495e;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 17px;
+}
+
+.aphr-report p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.72;
+  text-align: justify;
+}
+
+.aphr-report .section-content {
+  text-indent: 2em;
+}
+
+.aphr-report .no-content {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.aphr-report .citation {
+  color: #246ea6;
+  cursor: pointer;
+  font-size: 0.78em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.aphr-report .citation:hover {
+  text-decoration: underline;
+}
+
+.aphr-report .citation:focus-visible {
+  outline: 2px solid #246ea6;
+  outline-offset: 2px;
+}
+
+.aphr-report .intensity-map {
+  margin: 22px auto;
+  text-align: center;
+}
+
+.aphr-report .intensity-map img {
+  display: block;
+  width: min(100%, 520px);
+  max-height: 520px;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 1px solid var(--line);
+}
+
+.aphr-report figcaption,
+.aphr-report .image-caption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
+
+.aphr-report .pager-estimates {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8f9fa;
+  border-left: 4px solid var(--olive);
+}
+
+.aphr-report .pager-estimates p:last-child {
+  margin-bottom: 0;
+}
+
+.aphr-report .pager-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 18px 0 0;
+}
+
+.aphr-report .pager-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.aphr-report .reference-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: references;
+}
+
+.aphr-report .reference-list li {
+  margin-bottom: 11px;
+  padding: 10px 12px;
+  overflow-wrap: anywhere;
+  background: #f8faf8;
+  border-left: 3px solid var(--teal);
+  color: #394247;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.aphr-report .ref-num {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.aphr-report .ref-domain {
+  font-weight: 800;
+}
+
+.aphr-report .ref-link {
+  color: #246ea6;
+}
+
+.aphr-reference-highlight {
+  animation: aphrefade 2.2s ease-out;
+}
+
+@keyframes aphrefade {
+  0% {
+    background: #fff3bf;
+  }
+  100% {
+    background: #f8faf8;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .site-header,
+  .top-link,
+  .site-footer {
+    display: none;
+  }
+
+  .site-main,
+  .report-container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .product-header,
+  .aphr-report section {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .aphr-report .references {
+    break-before: page;
+  }
+}
+
+@media (max-width: 700px) {
+  .aphr-report section {
+    padding: 16px;
+  }
+
+  .aphr-report p {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .aphr-report .section-content {
+    text-indent: 0;
+  }
+}

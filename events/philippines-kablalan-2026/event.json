@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "slug": "philippines-kablalan-2026",
+  "title": "2026 Kablalan, Philippines",
+  "event_type": "Earthquake",
+  "event_date": "2026-06-08",
+  "tag": "Temporal snapshot",
+  "meta": "M7.8 · June 8, 2026 local time · 12-snapshot temporal analysis",
+  "description": "Interactive temporal APHR briefing for the Kablalan, Philippines earthquake, including the latest snapshot and multi-day evolution.",
+  "button_label": "Open Philippines briefing",
+  "products": []
+}

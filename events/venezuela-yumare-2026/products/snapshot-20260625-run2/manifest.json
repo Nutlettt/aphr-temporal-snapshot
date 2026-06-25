@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "bundle_type": "aphr_web_product",
+  "product_type": "snapshot_briefing",
+  "content_path": "content.html",
+  "title": "Snapshot briefing · June 25, 2026 run 2",
+  "event_title": "2026 Yumare, Venezuela",
+  "event_date": "2026-06-24",
+  "generated_at": "2026-06-25T17:30:22Z",
+  "model": "gpt-5.5",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "building",
+      "title": "Building Damage"
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure Impact"
+    },
+    {
+      "id": "resilience",
+      "title": "Resilience and Recovery"
+    },
+    {
+      "id": "references",
+      "title": "References"
+    }
+  ],
+  "counts": {
+    "facts_cited": 62,
+    "facts_total": 268,
+    "sources": 42
+  },
+  "assets": {
+    "intensity_image": "assets/intensity.jpg",
+    "pager_images": [
+      "assets/pager_1.png",
+      "assets/pager_2.png"
+    ]
+  },
+  "source": {
+    "workflow": "aphr-export-web-bundle",
+    "report_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report",
+    "snapshot_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2",
+    "standalone_html": "briefing_abstractive.html",
+    "standalone_pdf": "briefing_abstractive.pdf"
+  },
+  "snapshot": {
+    "mode": "live_snapshot",
+    "status": "completed",
+    "experiment_name": "venezuela_20260624_mainshock",
+    "snapshot_id": "latest_20260625_run2",
+    "event_id": "us6000t7zp",
+    "rupture_time": "2026-06-24T22:05:11Z",
+    "snapshot_time": "2026-06-25T17:26:42Z",
+    "generated_at": "2026-06-25T17:26:42Z",
+    "elapsed_hours_since_rupture": 19.36,
+    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/news/articles_filtered.csv",
+    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report",
+    "article_counts": {
+      "raw": 300,
+      "filtered": 297
+    },
+    "collection": {
+      "provider": "newscatcher",
+      "query": "+(\"earthquake\" AND \"Venezuela\")",
+      "from_": "2026-06-24T22:05:11Z",
+      "to_": "2026-06-25T17:26:42Z",
+      "by_parse_date": true,
+      "max_page": 4,
+      "page_size": 75
+    },
+    "generation": {
+      "abstractive_model": "gpt-5.5",
+      "abstractive_temperature": 1,
+      "extractive_ratio": 0.25
+    },
+    "paths": {
+      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/news/articles_filtered.csv",
+      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report"
+    },
+    "error": null
+  },
+  "event_slug": "venezuela-yumare-2026",
+  "product_slug": "snapshot-20260625-run2"
+}

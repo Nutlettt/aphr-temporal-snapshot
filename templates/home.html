@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <main class="site-main">
+      {{ brand_strip }}
+
+      <header class="site-header">
+        <div class="eyebrow">Automated Post-Hazard Reconnaissance</div>
+        <h1 class="site-title">APHR Event Briefings</h1>
+        <p class="site-subtitle">A collection of end-to-end automatically generated preliminary virtual reconnaissance briefings for recent earthquake events. Each event page can include a latest snapshot, temporal analysis, and related automated reports.</p>
+      </header>
+
+      <div class="note"><strong>Note:</strong> These products are preliminary, automatically generated briefings intended to support rapid situational awareness and expert review.</div>
+
+      <section class="grid" aria-label="APHR event list">
+        {{ event_cards }}
+      </section>
+
+      <footer class="site-footer">
+        Khalid M. Mosalam and Guanren Zhou · University of California, Berkeley
+      </footer>
+
+      <section class="site-counter" aria-label="Site visitor counter">
+        <p>
+          Site visits:
+          <img src="https://hits.sh/k-mosalam.github.io/aphr-temporal-snapshot.svg?label=%20&color=1f5e61&labelColor=1f5e61" alt="Site visit counter">
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

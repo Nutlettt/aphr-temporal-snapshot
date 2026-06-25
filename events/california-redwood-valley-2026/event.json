@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "slug": "california-redwood-valley-2026",
+  "title": "2026 Redwood Valley, California",
+  "event_type": "Earthquake",
+  "event_date": "2026-06-24",
+  "tag": "Abstractive report",
+  "meta": "M5.59 · June 24, 2026 local time · California event",
+  "description": "Automated earthquake briefing for the Redwood Valley, California event.",
+  "button_label": "Open California briefing",
+  "products": []
+}

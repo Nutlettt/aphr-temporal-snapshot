@@ -4,111 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>APHR Event Briefings</title>
-  <style>
-    :root {
-      --ink:#202427; --muted:#5f696f; --line:#d8ddd8; --panel:#fff;
-      --soft:#f8faf8; --teal:#1f5e61; --olive:#667344; --amber:#9a681f;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    *{box-sizing:border-box} body{margin:0;background:#f5f6f3;color:var(--ink)}
-    main{max-width:1120px;margin:0 auto;padding:34px 22px 56px}
-    header{border-bottom:4px solid var(--teal);padding:20px 0 26px;text-align:center}
-    .brand-strip{display:flex;justify-content:center;align-items:center;gap:34px;flex-wrap:wrap;margin:0 0 22px}
-    .brand-logo{display:flex;align-items:center;justify-content:center;min-height:72px}.brand-logo img{display:block;max-height:70px;max-width:300px;object-fit:contain}.brand-logo-peer img{height:74px;width:74px;max-height:74px;max-width:74px}
-    .eyebrow{color:var(--olive);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
-    h1{font-size:36px;line-height:1.1;margin:8px 0 10px}.subtitle{color:var(--muted);font-size:16px;max-width:760px;margin:0 auto;line-height:1.55}
-    .note{background:#fff8e8;border-left:4px solid var(--amber);padding:12px 14px;margin:22px 0;color:#4a4f52}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}
-    .card{background:var(--panel);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;min-height:240px}
-    .tag{display:inline-block;width:max-content;background:#eef6f4;color:var(--teal);border:1px solid #cfe2dd;padding:4px 8px;font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:12px}
-    h2{font-size:21px;line-height:1.2;margin:0 0 8px;color:var(--teal)}
-    .meta{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 14px}.desc{line-height:1.55;margin:0 0 18px;color:#394247}
-    .button{margin-top:auto;display:inline-block;text-decoration:none;background:var(--teal);color:white;padding:10px 12px;font-weight:800;text-align:center}
-    .button.secondary{background:#eef6f4;color:var(--teal);border:1px solid var(--teal)}
-    footer{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13px;text-align:center}
-
-    <style>
-.site-counter {
-  margin-top: 28px;
-  padding: 14px 18px;
-  border: 1px solid #d8ddd8;
-  background: #ffffff;
-  text-align: center;
-  color: #5f696f;
-  font-size: 14px;
-}
-
-.site-counter p {
-  margin: 0;
-  font-weight: 700;
-}
-
-.site-counter img {
-  margin-left: 6px;
-}
-</style>
-  
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <main>
-    <header>
+  <div class="site-shell">
+    <main class="site-main">
       <div class="brand-strip" aria-label="Project partner logos">
-        <a class="brand-logo" href="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" alt="NSF and StEER logo"></a>
-        <a class="brand-logo brand-logo-peer" href="https://cdn.jsdelivr.net/gh/Nutlettt/logo-for-webs-dev@main/PEER-logo.svg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/Nutlettt/logo-for-webs-dev@main/PEER-logo.svg" alt="PEER logo"></a>
-        <a class="brand-logo" href="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/cropped-stairlab-slogan.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/cropped-stairlab-slogan.png" alt="STAIRLab logo"></a>
-      </div>
-      <div class="eyebrow">Automated Post-Hazard Reconnaissance</div>
-      <h1>APHR Event Briefings</h1>
-      <p class="subtitle">A collection of end-to-end automatically generated preliminary virtual reconnaissance briefings for recent earthquake events. Each event page can include a latest snapshot, temporal analysis, and related automated reports.</p>
-    </header>
+  <a class="brand-logo" href="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" target="_blank" rel="noopener">
+    <img src="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" alt="NSF and StEER logo">
+  </a>
+  <a class="brand-logo brand-logo-peer" href="https://cdn.jsdelivr.net/gh/Nutlettt/logo-for-webs-dev@main/PEER-logo.svg" target="_blank" rel="noopener">
+    <img src="https://cdn.jsdelivr.net/gh/Nutlettt/logo-for-webs-dev@main/PEER-logo.svg" alt="PEER logo">
+  </a>
+  <a class="brand-logo" href="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/cropped-stairlab-slogan.png" target="_blank" rel="noopener">
+    <img src="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/cropped-stairlab-slogan.png" alt="STAIRLab logo">
+  </a>
+</div>
 
-    <div class="note"><strong>Note:</strong> These products are preliminary, automatically generated briefings intended to support rapid situational awareness and expert review.</div>
+      <header class="site-header">
+        <div class="eyebrow">Automated Post-Hazard Reconnaissance</div>
+        <h1 class="site-title">APHR Event Briefings</h1>
+        <p class="site-subtitle">A collection of end-to-end automatically generated preliminary virtual reconnaissance briefings for recent earthquake events. Each event page can include a latest snapshot, temporal analysis, and related automated reports.</p>
+      </header>
 
-    <section class="grid" aria-label="APHR event list">
-      <article class="card">
-        <span class="tag">Temporal snapshot</span>
-        <h2>2026 Kablalan, Philippines</h2>
-        <p class="meta">M7.8 · June 8, 2026 local time · 12-snapshot temporal analysis</p>
-        <p class="desc">Interactive temporal APHR briefing for the Kablalan, Philippines earthquake, including the latest snapshot and multi-day evolution.</p>
-        <a class="button" href="events/philippines-kablalan-2026/">Open Philippines briefing</a>
-      </article>
+      <div class="note"><strong>Note:</strong> These products are preliminary, automatically generated briefings intended to support rapid situational awareness and expert review.</div>
 
-      <article class="card">
+      <section class="grid" aria-label="APHR event list">
+        <article class="card">
         <span class="tag">Abstractive report</span>
-        <h2>2026 Redwood Valley, California</h2>
+        <h2 class="card-title">2026 Redwood Valley, California</h2>
         <p class="meta">M5.59 · June 24, 2026 local time · California event</p>
         <p class="desc">Automated earthquake briefing for the Redwood Valley, California event.</p>
         <a class="button" href="events/california-redwood-valley-2026/">Open California briefing</a>
       </article>
 
-      <article class="card">
-        <span class="tag">Abstractive report</span>
-        <h2>2026 Yumare, Venezuela</h2>
-        <p class="meta">M7.5 · June 24, 2026 local time · Venezuela event</p>
-        <p class="desc">Automated earthquake briefing for the Yumare, Venezuela event.</p>
+<article class="card">
+        <span class="tag">Snapshot briefing</span>
+        <h2 class="card-title">2026 Yumare, Venezuela</h2>
+        <p class="meta">M7.5 · June 24, 2026 local time · 42 sources</p>
+        <p class="desc">Latest APHR snapshot briefing for the Yumare, Venezuela earthquake, with content exported from the research pipeline and rendered through the website template.</p>
         <a class="button" href="events/venezuela-yumare-2026/">Open Venezuela briefing</a>
       </article>
-    </section>
 
-    <footer>
-      Khalid M. Mosalam and Guanren Zhou · University of California, Berkeley
-    </footer>
+<article class="card">
+        <span class="tag">Temporal snapshot</span>
+        <h2 class="card-title">2026 Kablalan, Philippines</h2>
+        <p class="meta">M7.8 · June 8, 2026 local time · 12-snapshot temporal analysis</p>
+        <p class="desc">Interactive temporal APHR briefing for the Kablalan, Philippines earthquake, including the latest snapshot and multi-day evolution.</p>
+        <a class="button" href="events/philippines-kablalan-2026/">Open Philippines briefing</a>
+      </article>
+      </section>
 
-    
-  <section class="site-counter" aria-label="Site visitor counter">
-  <p>
-    Site visits:
-    <img
-      src="https://hits.sh/k-mosalam.github.io/aphr-temporal-snapshot.svg?label=%20&color=1f5e61&labelColor=1f5e61"
-      alt="Site visit counter"
-      style="vertical-align: middle;"
-    >
-  </p>
-</section>
-    
-  </main>
+      <footer class="site-footer">
+        Khalid M. Mosalam and Guanren Zhou · University of California, Berkeley
+      </footer>
 
-  
+      <section class="site-counter" aria-label="Site visitor counter">
+        <p>
+          Site visits:
+          <img src="https://hits.sh/k-mosalam.github.io/aphr-temporal-snapshot.svg?label=%20&color=1f5e61&labelColor=1f5e61" alt="Site visit counter">
+        </p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
