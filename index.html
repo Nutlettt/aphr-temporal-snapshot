@@ -3,10 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>APHR Event Briefings</title>
+  <title>APHR Events</title>
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+  <div class="global-topbar">
+  <nav class="global-breadcrumb" aria-label="Breadcrumb"><span class="crumb crumb-current">APHR Events</span></nav>
+  <button type="button" class="content-menu-button" data-site-nav-open="site-content-drawer" aria-label="Open contents" title="Contents" data-tooltip="Contents">
+    <span class="hamburger" aria-hidden="true"><span></span></span>
+  </button>
+</div>
+  <div class="site-nav-shell" id="site-content-drawer" aria-hidden="true">
+  <div class="site-nav-backdrop" data-site-nav-close></div>
+  <aside class="site-nav-panel" role="dialog" aria-modal="true" aria-labelledby="site-nav-title">
+    <div class="site-nav-header">
+      <h2 id="site-nav-title">Contents</h2>
+      <button type="button" class="site-nav-close" data-site-nav-close aria-label="Close contents">&times;</button>
+    </div>
+    <nav class="site-toc-links"><a href="#overview" data-site-nav-close>Overview</a>
+<a href="#events" data-site-nav-close>Events</a>
+<a href="#site-footer" data-site-nav-close>Credits</a></nav>
+  </aside>
+</div>
   <div class="site-shell">
     <main class="site-main">
       <div class="brand-strip" aria-label="Project partner logos">
@@ -21,41 +39,63 @@
   </a>
 </div>
 
-      <header class="site-header">
-        <div class="eyebrow">Automated Post-Hazard Reconnaissance</div>
-        <h1 class="site-title">APHR Event Briefings</h1>
-        <p class="site-subtitle">A collection of end-to-end automatically generated preliminary virtual reconnaissance briefings for recent earthquake events. Each event page can include a latest snapshot, temporal analysis, and related automated reports.</p>
+      <header class="site-header" id="overview">
+        <h1 class="site-title">APHR Events</h1>
+        <p class="site-subtitle">Preliminary post-hazard reconnaissance briefings, organized by event and snapshot time for rapid situational awareness and expert review.</p>
       </header>
 
-      <div class="note"><strong>Note:</strong> These products are preliminary, automatically generated briefings intended to support rapid situational awareness and expert review.</div>
-
-      <section class="grid" aria-label="APHR event list">
-        <article class="card">
-        <span class="tag">Abstractive report</span>
-        <h2 class="card-title">2026 Redwood Valley, California</h2>
-        <p class="meta">M5.59 · June 24, 2026 local time · California event</p>
-        <p class="desc">Automated earthquake briefing for the Redwood Valley, California event.</p>
-        <a class="button" href="events/california-redwood-valley-2026/">Open California briefing</a>
+      <section class="timeline-section" id="events" aria-label="APHR event timeline">
+        <div class="timeline-list event-timeline">
+        <article class="timeline-item event-timeline-item">
+        <div class="timeline-index" aria-hidden="true">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jun<span>24, 2026</span></div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-kicker">Earthquake · Snapshot briefing</div>
+          <h2 class="timeline-title">2026 Redwood Valley, California</h2>
+          <div class="timeline-meta"><span>M5.59</span>
+<span>June 24, 2026</span>
+<span>22 sources</span>
+<span>1 snapshot</span></div>
+          <a class="timeline-link" href="events/california-redwood-valley-2026/">Open California briefing<span aria-hidden="true">&rarr;</span></a>
+        </div>
       </article>
 
-<article class="card">
-        <span class="tag">Snapshot briefing</span>
-        <h2 class="card-title">2026 Yumare, Venezuela</h2>
-        <p class="meta">M7.5 · June 24, 2026 local time · 42 sources</p>
-        <p class="desc">Latest APHR snapshot briefing for the Yumare, Venezuela earthquake, with content exported from the research pipeline and rendered through the website template.</p>
-        <a class="button" href="events/venezuela-yumare-2026/">Open Venezuela briefing</a>
+<article class="timeline-item event-timeline-item">
+        <div class="timeline-index" aria-hidden="true">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jun<span>24, 2026</span></div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-kicker">Earthquake · Snapshot briefing</div>
+          <h2 class="timeline-title">2026 Yumare, Venezuela</h2>
+          <div class="timeline-meta"><span>M7.5</span>
+<span>June 24, 2026</span>
+<span>42 sources</span>
+<span>1 snapshot</span></div>
+          <a class="timeline-link" href="events/venezuela-yumare-2026/">Open Venezuela briefing<span aria-hidden="true">&rarr;</span></a>
+        </div>
       </article>
 
-<article class="card">
-        <span class="tag">Temporal snapshot</span>
-        <h2 class="card-title">2026 Kablalan, Philippines</h2>
-        <p class="meta">M7.8 · June 8, 2026 local time · 12-snapshot temporal analysis</p>
-        <p class="desc">Interactive temporal APHR briefing for the Kablalan, Philippines earthquake, including the latest snapshot and multi-day evolution.</p>
-        <a class="button" href="events/philippines-kablalan-2026/">Open Philippines briefing</a>
+<article class="timeline-item event-timeline-item">
+        <div class="timeline-index" aria-hidden="true">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jun<span>8, 2026</span></div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-kicker">Earthquake · Temporal snapshot</div>
+          <h2 class="timeline-title">2026 Kablalan, Philippines</h2>
+          <div class="timeline-meta"><span>M7.8</span>
+<span>June 8, 2026</span>
+<span>12-snapshot temporal analysis</span></div>
+          <a class="timeline-link" href="events/philippines-kablalan-2026/">Open Philippines briefing<span aria-hidden="true">&rarr;</span></a>
+        </div>
       </article>
+        </div>
       </section>
 
-      <footer class="site-footer">
+      <footer class="site-footer" id="site-footer">
         Khalid M. Mosalam and Guanren Zhou · University of California, Berkeley
       </footer>
 
@@ -67,5 +107,6 @@
       </section>
     </main>
   </div>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

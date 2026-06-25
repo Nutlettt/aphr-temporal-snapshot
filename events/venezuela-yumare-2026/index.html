@@ -7,9 +7,25 @@
   <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
+  <div class="global-topbar">
+  <nav class="global-breadcrumb" aria-label="Breadcrumb"><a class="crumb" href="../../">APHR Events</a><span class="crumb-separator">›</span><span class="crumb crumb-current">2026 Yumare, Venezuela</span></nav>
+  <button type="button" class="content-menu-button" data-site-nav-open="site-content-drawer" aria-label="Open contents" title="Contents" data-tooltip="Contents">
+    <span class="hamburger" aria-hidden="true"><span></span></span>
+  </button>
+</div>
+  <div class="site-nav-shell" id="site-content-drawer" aria-hidden="true">
+  <div class="site-nav-backdrop" data-site-nav-close></div>
+  <aside class="site-nav-panel" role="dialog" aria-modal="true" aria-labelledby="site-nav-title">
+    <div class="site-nav-header">
+      <h2 id="site-nav-title">Contents</h2>
+      <button type="button" class="site-nav-close" data-site-nav-close aria-label="Close contents">&times;</button>
+    </div>
+    <nav class="site-toc-links"><a href="#event-overview" data-site-nav-close>Event Overview</a>
+<a href="#snapshots" data-site-nav-close>Snapshots</a></nav>
+  </aside>
+</div>
   <div class="site-shell">
     <main class="site-main">
-      <a class="top-link" href="../../">← All APHR events</a>
       <div class="brand-strip" aria-label="Project partner logos">
   <a class="brand-logo" href="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" target="_blank" rel="noopener">
     <img src="https://raw.githubusercontent.com/Nutlettt/logo-for-webs-dev/main/NSF-and-STEER.png" alt="NSF and StEER logo">
@@ -22,20 +38,31 @@
   </a>
 </div>
 
-      <header class="site-header">
-        <div class="eyebrow">Earthquake</div>
+      <header class="site-header" id="event-overview">
         <h1 class="site-title">2026 Yumare, Venezuela</h1>
-        <p class="site-subtitle">Latest APHR snapshot briefing for the Yumare, Venezuela earthquake, with content exported from the research pipeline and rendered through the website template.</p>
+        <p class="site-subtitle">M7.5 · June 24, 2026 · 42 sources</p>
       </header>
 
-      <section class="grid" aria-label="Available products">
-        <article class="card">
-        <span class="tag">Latest Snapshot briefing</span>
-        <h2 class="card-title">Snapshot briefing · June 25, 2026 run 2</h2>
-        <p class="meta">Generated: 2026-06-25T17:30:22Z · Sources: 42 · Facts cited: 62/268</p>
-        <p class="desc">Latest website-ready APHR snapshot generated from the second June 25 run, citing 62 of 268 extracted facts across 42 sources.</p>
-        <a class="button" href="products/snapshot-20260625-run2/">Open product</a>
+      <section class="timeline-section" id="snapshots" aria-label="Snapshot timeline">
+        <div class="section-heading">
+          <h2>Snapshot timeline</h2>
+        </div>
+        <div class="timeline-list product-timeline">
+        <article class="timeline-item product-timeline-item">
+        <div class="timeline-index" aria-hidden="true">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jun<span>25, 2026</span></div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-kicker">Latest Snapshot briefing</div>
+          <h2 class="timeline-title">Snapshot briefing · June 25, 2026 run 2</h2>
+          <div class="timeline-meta"><span>Generated Jun 25, 2026 17:30 UTC</span>
+<span>Sources: 42</span>
+<span>Facts cited: 62/268</span></div>
+          <a class="timeline-link" href="products/snapshot-20260625-run2/">Open snapshot<span aria-hidden="true">&rarr;</span></a>
+        </div>
       </article>
+        </div>
       </section>
 
       <footer class="site-footer">
@@ -43,5 +70,6 @@
       </footer>
     </main>
   </div>
+  <script src="../../assets/js/site.js"></script>
 </body>
 </html>

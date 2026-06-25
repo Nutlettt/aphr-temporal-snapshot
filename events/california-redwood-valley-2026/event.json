@@ -4,9 +4,24 @@
   "title": "2026 Redwood Valley, California",
   "event_type": "Earthquake",
   "event_date": "2026-06-24",
-  "tag": "Abstractive report",
-  "meta": "M5.59 · June 24, 2026 local time · California event",
-  "description": "Automated earthquake briefing for the Redwood Valley, California event.",
+  "tag": "Snapshot briefing",
+  "meta": "M5.59 · June 24, 2026 local time · 22 sources",
+  "description": "APHR snapshot briefing for the Redwood Valley, California earthquake, rendered through the shared website template.",
   "button_label": "Open California briefing",
-  "products": []
+  "products": [
+    {
+      "slug": "snapshot-20260624",
+      "title": "Snapshot briefing · June 24, 2026",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-25T05:14:11Z",
+      "counts": {
+        "facts_cited": 22,
+        "facts_total": 22,
+        "sources": 22
+      },
+      "summary": "Website-ready APHR snapshot for the Redwood Valley, California event, citing 22 of 22 extracted facts across 22 sources.",
+      "manifest_path": "products/snapshot-20260624/manifest.json"
+    }
+  ],
+  "latest_product_slug": "snapshot-20260624"
 }

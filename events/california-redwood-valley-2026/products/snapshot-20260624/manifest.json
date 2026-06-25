@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "bundle_type": "aphr_web_product",
+  "product_type": "snapshot_briefing",
+  "content_path": "content.html",
+  "title": "Snapshot briefing · June 24, 2026",
+  "event_title": "2026 Redwood Valley, California",
+  "event_date": "2026-06-24",
+  "generated_at": "2026-06-25T05:14:11Z",
+  "model": "gpt-5.5",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "building",
+      "title": "Building Damage"
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure Impact"
+    },
+    {
+      "id": "resilience",
+      "title": "Resilience and Recovery"
+    },
+    {
+      "id": "references",
+      "title": "References"
+    }
+  ],
+  "counts": {
+    "facts_cited": 22,
+    "facts_total": 22,
+    "sources": 22
+  },
+  "assets": {
+    "intensity_image": "assets/intensity.jpg",
+    "pager_images": [
+      "assets/pager_1.png",
+      "assets/pager_2.png"
+    ]
+  },
+  "source": {
+    "workflow": "aphr-export-web-bundle",
+    "report_dir": "experiments/california_20260624_redwood_valley/snapshots/latest_20260624/report",
+    "snapshot_dir": "experiments/california_20260624_redwood_valley/snapshots/latest_20260624",
+    "standalone_html": "briefing_abstractive.html",
+    "standalone_pdf": "briefing_abstractive.pdf"
+  },
+  "snapshot": {
+    "mode": "live_snapshot",
+    "status": "completed",
+    "experiment_name": "california_20260624_redwood_valley",
+    "snapshot_id": "latest_20260624",
+    "event_id": "nc75382936",
+    "rupture_time": "2026-06-24T15:10:40Z",
+    "snapshot_time": "2026-06-25T05:10:03Z",
+    "generated_at": "2026-06-25T05:10:03Z",
+    "elapsed_hours_since_rupture": 13.99,
+    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/california_20260624_redwood_valley/snapshots/latest_20260624/news/articles_filtered.csv",
+    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/california_20260624_redwood_valley/snapshots/latest_20260624/report",
+    "article_counts": {
+      "raw": 143,
+      "filtered": 111
+    },
+    "collection": {
+      "provider": "newscatcher",
+      "query": "+(\"earthquake\" AND \"CA\")",
+      "from_": "2026-06-24T15:10:40Z",
+      "to_": "2026-06-25T05:10:03Z",
+      "by_parse_date": true,
+      "max_page": 4,
+      "page_size": 75
+    },
+    "generation": {
+      "abstractive_model": "gpt-5.5",
+      "abstractive_temperature": 1,
+      "extractive_ratio": 0.25
+    },
+    "paths": {
+      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/california_20260624_redwood_valley/snapshots/latest_20260624/news/articles_filtered.csv",
+      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/california_20260624_redwood_valley/snapshots/latest_20260624/report"
+    },
+    "error": null
+  },
+  "event_slug": "california-redwood-valley-2026",
+  "product_slug": "snapshot-20260624"
+}

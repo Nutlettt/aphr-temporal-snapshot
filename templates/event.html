@@ -7,19 +7,24 @@
   <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
+  {{ topbar }}
+  {{ content_drawer }}
   <div class="site-shell">
     <main class="site-main">
-      <a class="top-link" href="../../">← All APHR events</a>
       {{ brand_strip }}
 
-      <header class="site-header">
-        <div class="eyebrow">{{ event_type }}</div>
+      <header class="site-header" id="event-overview">
         <h1 class="site-title">{{ event_title }}</h1>
         <p class="site-subtitle">{{ event_description }}</p>
       </header>
 
-      <section class="grid" aria-label="Available products">
-        {{ product_cards }}
+      <section class="timeline-section" id="snapshots" aria-label="Snapshot timeline">
+        <div class="section-heading">
+          <h2>Snapshot timeline</h2>
+        </div>
+        <div class="timeline-list product-timeline">
+        {{ product_timeline }}
+        </div>
       </section>
 
       <footer class="site-footer">
@@ -27,5 +32,6 @@
       </footer>
     </main>
   </div>
+  <script src="../../assets/js/site.js"></script>
 </body>
 </html>

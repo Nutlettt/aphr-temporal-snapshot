@@ -1,49 +1,93 @@
 .report-container {
-  max-width: 980px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
+.report-header {
+  padding: 18px 0;
+  text-align: center;
+}
+
+.report-title {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  margin: 6px auto 10px;
+  color: var(--ink);
+}
+
+.title-location {
+  display: block;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.title-product {
+  display: block;
+  color: var(--teal);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.24;
+  text-transform: uppercase;
+}
+
+.header-times {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.header-times span {
+  padding: 6px 10px;
+  background: #eef1eb;
+  border: 1px solid var(--line);
+}
+
 .aphr-report {
-  font-family: Georgia, "Times New Roman", serif;
+  margin-top: 18px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   color: #2c3437;
 }
 
 .aphr-report section {
-  margin: 0 0 24px;
+  margin: 0 0 22px;
   padding: 22px;
   background: #ffffff;
   border: 1px solid var(--line);
-  border-radius: 6px;
 }
 
 .aphr-report h2 {
-  margin: 0 0 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #dfe4df;
+  margin: 0 0 14px;
+  padding-bottom: 0;
+  border-bottom: 0;
   color: var(--teal);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 22px;
-  line-height: 1.25;
+  font-size: 27px;
+  line-height: 1.22;
 }
 
 .aphr-report h3 {
-  margin: 18px 0 10px;
-  color: #34495e;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 17px;
+  margin: 22px 0 8px;
+  color: var(--teal);
+  font-size: 16px;
 }
 
 .aphr-report p {
   margin: 0 0 12px;
-  font-size: 16px;
-  line-height: 1.72;
-  text-align: justify;
+  font-size: 15px;
+  line-height: 1.58;
+  text-align: left;
 }
 
 .aphr-report .section-content {
-  text-indent: 2em;
+  color: #394247;
+  text-indent: 0;
+  white-space: pre-line;
 }
 
 .aphr-report .no-content {
@@ -52,7 +96,7 @@
 }
 
 .aphr-report .citation {
-  color: #246ea6;
+  color: var(--teal);
   cursor: pointer;
   font-size: 0.78em;
   font-weight: 700;
@@ -69,17 +113,18 @@
 }
 
 .aphr-report .intensity-map {
-  margin: 22px auto;
-  text-align: center;
+  margin: 18px 0 14px;
+  padding: 10px;
+  background: #fbfcfb;
+  border: 1px solid var(--line);
 }
 
 .aphr-report .intensity-map img {
   display: block;
-  width: min(100%, 520px);
+  width: 100%;
   max-height: 520px;
   margin: 0 auto;
   object-fit: contain;
-  border: 1px solid var(--line);
 }
 
 .aphr-report figcaption,
@@ -95,9 +140,10 @@
 
 .aphr-report .pager-estimates {
   margin: 20px 0;
-  padding: 16px;
-  background: #f8f9fa;
-  border-left: 4px solid var(--olive);
+  padding: 10px 12px;
+  background: #f7f5ee;
+  border-left: 4px solid var(--amber);
+  color: #394247;
 }
 
 .aphr-report .pager-estimates p:last-child {
@@ -106,36 +152,36 @@
 
 .aphr-report .pager-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  margin: 18px 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
 }
 
 .aphr-report .pager-img {
+  display: block;
   width: 100%;
-  max-height: 420px;
+  height: auto;
+  max-height: 320px;
   object-fit: contain;
-  background: #ffffff;
+  background: #fbfcfb;
   border: 1px solid var(--line);
 }
 
 .aphr-report .reference-list {
   margin: 0;
   padding-left: 0;
+  color: #485257;
+  font-size: 13px;
   list-style: none;
-  counter-reset: references;
 }
 
 .aphr-report .reference-list li {
-  margin-bottom: 11px;
-  padding: 10px 12px;
+  margin-bottom: 10px;
+  padding: 0;
   overflow-wrap: anywhere;
-  background: #f8faf8;
-  border-left: 3px solid var(--teal);
+  background: transparent;
+  border-left: 0;
   color: #394247;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -171,7 +217,8 @@
   }
 
   .site-header,
-  .top-link,
+  .global-topbar,
+  .site-nav-shell,
   .site-footer {
     display: none;
   }
@@ -183,6 +230,7 @@
   }
 
   .product-header,
+  .report-header,
   .aphr-report section {
     border: 0;
     box-shadow: none;
@@ -194,6 +242,14 @@
 }
 
 @media (max-width: 700px) {
+  .title-location {
+    font-size: 28px;
+  }
+
+  .title-product {
+    font-size: 14px;
+  }
+
   .aphr-report section {
     padding: 16px;
   }

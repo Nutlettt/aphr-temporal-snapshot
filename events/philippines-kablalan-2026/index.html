@@ -27,7 +27,8 @@
     .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 45; height: 54px; background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); display: flex; align-items: center; padding: 0 22px; }
     .toc-button { appearance: none; border: 1px solid var(--teal); background: #eef6f4; color: var(--teal); padding: 7px 11px; font-weight: 800; cursor: pointer; }
     .toc-button:hover { background: #dcece8; }
-    header.report-header { border-bottom: 4px solid var(--teal); padding: 18px 0 24px; text-align: center; }
+    header.report-header { padding: 18px 0; text-align: center; }
+    header.report-header::after { display: block; width: 100%; height: 1px; margin: 22px auto 0; background: linear-gradient(90deg, transparent, rgba(188, 199, 195, 0.94) 7%, rgba(188, 199, 195, 0.94) 93%, transparent); content: ""; }
     .brand-strip { display: flex; justify-content: center; align-items: center; gap: 34px; flex-wrap: wrap; margin: 0 0 24px; }
     .brand-logo { display: flex; align-items: center; justify-content: center; min-height: 76px; }
     .brand-logo img { display: block; max-height: 72px; max-width: 310px; width: auto; object-fit: contain; }
@@ -95,7 +96,7 @@
     table { border-collapse: collapse; width: 100%; font-size: 13px; background: white; }
     th, td { border: 1px solid var(--line); padding: 8px 9px; text-align: left; vertical-align: top; }
     th { background: #eef1eb; }
-    .reference-list { font-size: 13px; color: #485257; padding: 0 0 0 22px; }
+    .reference-list { font-size: 13px; color: #485257; padding: 0; list-style: none; }
     .reference-list li { margin-bottom: 10px; }
     .drawer-note { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
     .scope-notes { color: #4a4f52; }
@@ -137,13 +138,125 @@
       .card-grid { grid-template-columns: 1fr; }
       .drawer-panel { width: 100vw; }
     }
+
+    .topbar {
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .global-breadcrumb {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .global-breadcrumb a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .global-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .global-breadcrumb .crumb-current {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--ink);
+      text-overflow: ellipsis;
+    }
+
+    .global-breadcrumb .crumb-separator {
+      color: #9aa4a6;
+    }
+
+    .content-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 38px;
+      height: 36px;
+      min-height: 36px;
+      padding: 0;
+      border-radius: 4px;
+    }
+
+    .content-menu-button::after {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 80;
+      padding: 5px 8px;
+      background: #202427;
+      border-radius: 3px;
+      color: #ffffff;
+      content: attr(data-tooltip);
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.2;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-2px);
+      transition: opacity 120ms ease, transform 120ms ease;
+      white-space: nowrap;
+    }
+
+    .content-menu-button:hover::after,
+    .content-menu-button:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-label { display: none; }
+
+    .hamburger {
+      position: relative;
+      width: 18px;
+      height: 12px;
+      display: inline-block;
+    }
+
+    .hamburger::before,
+    .hamburger::after,
+    .hamburger span {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .hamburger::before { top: 0; }
+    .hamburger span { top: 5px; }
+    .hamburger::after { bottom: 0; }
+
+    @media (max-width: 700px) {
+      .global-breadcrumb { gap: 6px; font-size: 13px; }
+      .global-breadcrumb .optional-crumb { display: none; }
+      .content-menu-button .content-label { display: none; }
+    }
     </style>
 </head>
 <body>
-  <div style="position:fixed;top:10px;right:10px;z-index:9999;background:#ffffff;border:1px solid #d8ddd8;padding:8px 10px;font-family:Arial,sans-serif;font-size:13px;"><a href="../../" style="color:#1f5e61;text-decoration:none;font-weight:bold;">← All APHR events</a></div>
-  
-    <div class="topbar">
-      <button type="button" class="toc-button" data-nav-open aria-label="Open contents">Contents</button>
+    <div class="topbar global-topbar">
+      <nav class="global-breadcrumb" aria-label="Breadcrumb">
+        <a class="crumb" href="../../">APHR Events</a>
+        <span class="crumb-separator">›</span>
+        <span class="crumb-current">2026 Kablalan, Philippines</span>
+        <span class="crumb-separator">›</span>
+        <span class="crumb-current">Temporal Analysis</span>
+      </nav>
+      <button type="button" class="toc-button content-menu-button" data-nav-open aria-label="Open contents" title="Contents" data-tooltip="Contents">
+        <span class="hamburger" aria-hidden="true"><span></span></span>
+      </button>
     </div>
     
   
