@@ -4,9 +4,196 @@
   "title": "2026 Kablalan, Philippines",
   "event_type": "Earthquake",
   "event_date": "2026-06-08",
-  "tag": "Temporal snapshot",
-  "meta": "M7.8 · June 8, 2026 local time · 12-snapshot temporal analysis",
-  "description": "Interactive temporal APHR briefing for the Kablalan, Philippines earthquake, including the latest snapshot and multi-day evolution.",
-  "button_label": "Open Philippines briefing",
-  "products": []
+  "tag": "Temporal analysis",
+  "meta": "M7.8 · June 8, 2026",
+  "description": "APHR temporal analysis and snapshot products for the Kablalan, Philippines earthquake.",
+  "button_label": "Open Philippines event",
+  "products": [
+    {
+      "slug": "snapshot-s02-20260608-2100pht",
+      "title": "Snapshot briefing · Jun 8, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T05:20:20Z",
+      "counts": {
+        "facts_cited": 63,
+        "facts_total": 346,
+        "sources": 48
+      },
+      "summary": "Website-ready APHR snapshot briefing with 48 sources and 63/346 cited facts.",
+      "manifest_path": "products/snapshot-s02-20260608-2100pht/manifest.json",
+      "snapshot_time": "2026-06-08T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s04-20260609-2100pht",
+      "title": "Snapshot briefing · Jun 9, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T05:59:15Z",
+      "counts": {
+        "facts_cited": 43,
+        "facts_total": 259,
+        "sources": 31
+      },
+      "summary": "Website-ready APHR snapshot briefing with 31 sources and 43/259 cited facts.",
+      "manifest_path": "products/snapshot-s04-20260609-2100pht/manifest.json",
+      "snapshot_time": "2026-06-09T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s06-20260610-2100pht",
+      "title": "Snapshot briefing · Jun 10, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T06:37:47Z",
+      "counts": {
+        "facts_cited": 38,
+        "facts_total": 266,
+        "sources": 28
+      },
+      "summary": "Website-ready APHR snapshot briefing with 28 sources and 38/266 cited facts.",
+      "manifest_path": "products/snapshot-s06-20260610-2100pht/manifest.json",
+      "snapshot_time": "2026-06-10T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s08-20260611-2100pht",
+      "title": "Snapshot briefing · Jun 11, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T06:46:13Z",
+      "counts": {
+        "facts_cited": 38,
+        "facts_total": 273,
+        "sources": 30
+      },
+      "summary": "Website-ready APHR snapshot briefing with 30 sources and 38/273 cited facts.",
+      "manifest_path": "products/snapshot-s08-20260611-2100pht/manifest.json",
+      "snapshot_time": "2026-06-11T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s10-20260612-2100pht",
+      "title": "Snapshot briefing · Jun 12, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T06:55:15Z",
+      "counts": {
+        "facts_cited": 38,
+        "facts_total": 276,
+        "sources": 27
+      },
+      "summary": "Website-ready APHR snapshot briefing with 27 sources and 38/276 cited facts.",
+      "manifest_path": "products/snapshot-s10-20260612-2100pht/manifest.json",
+      "snapshot_time": "2026-06-12T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s12-20260613-2100pht",
+      "title": "Snapshot briefing · Jun 13, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T07:03:59Z",
+      "counts": {
+        "facts_cited": 32,
+        "facts_total": 256,
+        "sources": 24
+      },
+      "summary": "Website-ready APHR snapshot briefing with 24 sources and 32/256 cited facts.",
+      "manifest_path": "products/snapshot-s12-20260613-2100pht/manifest.json",
+      "snapshot_time": "2026-06-13T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s14-20260614-2100pht",
+      "title": "Snapshot briefing · Jun 14, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T07:13:02Z",
+      "counts": {
+        "facts_cited": 29,
+        "facts_total": 259,
+        "sources": 20
+      },
+      "summary": "Website-ready APHR snapshot briefing with 20 sources and 29/259 cited facts.",
+      "manifest_path": "products/snapshot-s14-20260614-2100pht/manifest.json",
+      "snapshot_time": "2026-06-14T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s16-20260615-2100pht",
+      "title": "Snapshot briefing · Jun 15, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T07:22:08Z",
+      "counts": {
+        "facts_cited": 40,
+        "facts_total": 239,
+        "sources": 29
+      },
+      "summary": "Website-ready APHR snapshot briefing with 29 sources and 40/239 cited facts.",
+      "manifest_path": "products/snapshot-s16-20260615-2100pht/manifest.json",
+      "snapshot_time": "2026-06-15T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s18-20260616-2100pht",
+      "title": "Snapshot briefing · Jun 16, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T07:48:40Z",
+      "counts": {
+        "facts_cited": 38,
+        "facts_total": 180,
+        "sources": 28
+      },
+      "summary": "Website-ready APHR snapshot briefing with 28 sources and 38/180 cited facts.",
+      "manifest_path": "products/snapshot-s18-20260616-2100pht/manifest.json",
+      "snapshot_time": "2026-06-16T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s20-20260617-2100pht",
+      "title": "Snapshot briefing · Jun 17, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T08:06:37Z",
+      "counts": {
+        "facts_cited": 66,
+        "facts_total": 169,
+        "sources": 34
+      },
+      "summary": "Website-ready APHR snapshot briefing with 34 sources and 66/169 cited facts.",
+      "manifest_path": "products/snapshot-s20-20260617-2100pht/manifest.json",
+      "snapshot_time": "2026-06-17T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s22-20260618-2100pht",
+      "title": "Snapshot briefing · Jun 18, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T08:55:33Z",
+      "counts": {
+        "facts_cited": 67,
+        "facts_total": 119,
+        "sources": 36
+      },
+      "summary": "Website-ready APHR snapshot briefing with 36 sources and 67/119 cited facts.",
+      "manifest_path": "products/snapshot-s22-20260618-2100pht/manifest.json",
+      "snapshot_time": "2026-06-18T13:00:00Z"
+    },
+    {
+      "slug": "snapshot-s24-20260619-2100pht",
+      "title": "Snapshot briefing · Jun 19, 2026 13:00 UTC",
+      "product_type": "snapshot_briefing",
+      "generated_at": "2026-06-19T18:59:33Z",
+      "counts": {
+        "facts_cited": 49,
+        "facts_total": 199,
+        "sources": 31
+      },
+      "summary": "Website-ready APHR snapshot briefing with 31 sources and 49/199 cited facts.",
+      "manifest_path": "products/snapshot-s24-20260619-2100pht/manifest.json",
+      "snapshot_time": "2026-06-19T13:00:00Z"
+    },
+    {
+      "slug": "temporal-analysis",
+      "title": "Temporal analysis · Jun 19, 2026 13:00 UTC",
+      "product_type": "temporal_recon",
+      "generated_at": "2026-06-22T02:07:00Z",
+      "counts": {
+        "sections": 3,
+        "snapshots": 12,
+        "source_references": 119,
+        "tracks": 23,
+        "findings": 23,
+        "highlights": 8
+      },
+      "summary": "Aggregated APHR temporal analysis built from 12 snapshots, 23 temporal tracks, 119 sources.",
+      "manifest_path": "products/temporal-analysis/manifest.json",
+      "featured": true
+    }
+  ],
+  "latest_product_slug": "snapshot-s24-20260619-2100pht"
 }

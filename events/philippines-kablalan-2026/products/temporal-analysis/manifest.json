@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "bundle_type": "aphr_web_product",
+  "manifest_type": "temporal_reconnaissance_web_bundle",
+  "product_type": "temporal_recon",
+  "content_path": "content.html",
+  "title": "Temporal analysis · Jun 19, 2026 13:00 UTC",
+  "event_title": "2026 Kablalan, Philippines",
+  "event_date": "2026-06-08",
+  "generated_at": "2026-06-22T02:07:00Z",
+  "model": "gpt-5.4",
+  "product_version": "5.5.0",
+  "temporal": {
+    "as_of_snapshot_id": "s24_20260619_2100pht",
+    "as_of_time": "2026-06-19T13:00:00Z",
+    "rupture_time": "2026-06-07T23:37:41Z",
+    "temporal_span": {
+      "start_snapshot_id": "s02_20260608_2100pht",
+      "start_time": "2026-06-08T13:00:00Z",
+      "end_snapshot_id": "s24_20260619_2100pht",
+      "end_time": "2026-06-19T13:00:00Z",
+      "snapshot_count": 12
+    },
+    "analyzer": {
+      "analyzer_version": "5.3.10",
+      "model": "gpt-5.4",
+      "temperature": 1.0,
+      "evidence_absence_note": "A finding marked 'dropped' (or a trajectory point with observed=false) means it was previously observed in APHR evidence but was NOT observed in a later snapshot's analyzed evidence. It does NOT mean the real-world condition ended. Evidence absence is not factual absence."
+    },
+    "product_writer": {
+      "ran": true,
+      "model": "gpt-5.4",
+      "temperature": 0.2
+    }
+  },
+  "assets": {
+    "copied": [
+      "assets/overview_1.jpg",
+      "assets/resilience_pager_1.png",
+      "assets/resilience_pager_2.png"
+    ]
+  },
+  "source": {
+    "workflow": "aphr-temporal-recon-product",
+    "product_data": "experiments/philippines_2026_temporal_evening_snapshots/products/integrated_recon_product_data.json",
+    "product_manifest": "experiments/philippines_2026_temporal_evening_snapshots/products/product_manifest.json",
+    "standalone_html": "experiments/philippines_2026_temporal_evening_snapshots/products/integrated_recon_product.html"
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "building",
+      "title": "Building Damage"
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure Impact"
+    },
+    {
+      "id": "resilience",
+      "title": "Resilience and Recovery"
+    },
+    {
+      "id": "sources",
+      "title": "Sources and Evidence Notes"
+    }
+  ],
+  "counts": {
+    "sections": 3,
+    "snapshots": 12,
+    "source_references": 119,
+    "tracks": 23,
+    "findings": 23,
+    "highlights": 8
+  },
+  "event_slug": "philippines-kablalan-2026",
+  "product_slug": "temporal-analysis"
+}

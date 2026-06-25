@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "bundle_type": "aphr_web_product",
+  "product_type": "snapshot_briefing",
+  "content_path": "content.html",
+  "title": "2026 Kablalan, Philippines",
+  "event_title": "2026 Kablalan, Philippines",
+  "event_date": "2026-06-08",
+  "generated_at": "2026-06-19T07:48:40Z",
+  "model": "gpt-5.5",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "building",
+      "title": "Building Damage"
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure Impact"
+    },
+    {
+      "id": "resilience",
+      "title": "Resilience and Recovery"
+    },
+    {
+      "id": "references",
+      "title": "References"
+    }
+  ],
+  "counts": {
+    "facts_cited": 38,
+    "facts_total": 180,
+    "sources": 28
+  },
+  "assets": {
+    "intensity_image": "assets/intensity.jpg",
+    "pager_images": [
+      "assets/pager_1.png",
+      "assets/pager_2.png"
+    ]
+  },
+  "source": {
+    "workflow": "aphr-export-web-bundle",
+    "report_dir": "experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht/report",
+    "snapshot_dir": "experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht",
+    "standalone_html": "briefing_abstractive.html",
+    "standalone_pdf": "briefing_abstractive.pdf"
+  },
+  "snapshot": {
+    "mode": "live_snapshot",
+    "status": "completed",
+    "experiment_name": "philippines_2026_temporal_snapshots",
+    "snapshot_id": "s18_20260616_2100pht",
+    "event_id": "us7000srb1",
+    "rupture_time": "2026-06-07T23:37:41Z",
+    "snapshot_time": "2026-06-16T13:00:00Z",
+    "generated_at": "2026-06-19T07:42:23Z",
+    "elapsed_hours_since_rupture": 205.37,
+    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht/news/articles_filtered.csv",
+    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht/report",
+    "article_counts": {
+      "raw": 300,
+      "filtered": 299
+    },
+    "collection": {
+      "provider": "newscatcher",
+      "query": "+(\"earthquake\" AND \"Philippines\")",
+      "from_": "2026-06-07T23:37:41Z",
+      "to_": "2026-06-16T13:00:00Z",
+      "by_parse_date": true,
+      "max_page": 4,
+      "page_size": 75
+    },
+    "generation": {
+      "abstractive_model": "gpt-5.5",
+      "abstractive_temperature": 1,
+      "extractive_ratio": 0.25
+    },
+    "paths": {
+      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht/news/articles_filtered.csv",
+      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/philippines_2026_temporal_snapshots/snapshots/s18_20260616_2100pht/report"
+    },
+    "error": null
+  },
+  "event_slug": "philippines-kablalan-2026",
+  "product_slug": "snapshot-s18-20260616-2100pht"
+}

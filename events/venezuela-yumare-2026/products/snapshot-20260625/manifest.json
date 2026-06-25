@@ -3,10 +3,10 @@
   "bundle_type": "aphr_web_product",
   "product_type": "snapshot_briefing",
   "content_path": "content.html",
-  "title": "Snapshot briefing · June 25, 2026 run 2",
+  "title": "Snapshot briefing · June 25, 2026",
   "event_title": "2026 Yumare, Venezuela",
   "event_date": "2026-06-24",
-  "generated_at": "2026-06-25T17:30:22Z",
+  "generated_at": "2026-06-25T22:16:36Z",
   "model": "gpt-5.5",
   "sections": [
     {
@@ -31,9 +31,9 @@
     }
   ],
   "counts": {
-    "facts_cited": 62,
-    "facts_total": 268,
-    "sources": 42
+    "facts_cited": 59,
+    "facts_total": 289,
+    "sources": 38
   },
   "assets": {
     "intensity_image": "assets/intensity.jpg",
@@ -44,8 +44,8 @@
   },
   "source": {
     "workflow": "aphr-export-web-bundle",
-    "report_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report",
-    "snapshot_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2",
+    "report_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625/report",
+    "snapshot_dir": "experiments/venezuela_20260624_mainshock/snapshots/latest_20260625",
     "standalone_html": "briefing_abstractive.html",
     "standalone_pdf": "briefing_abstractive.pdf"
   },
@@ -53,23 +53,23 @@
     "mode": "live_snapshot",
     "status": "completed",
     "experiment_name": "venezuela_20260624_mainshock",
-    "snapshot_id": "latest_20260625_run2",
+    "snapshot_id": "latest_20260625",
     "event_id": "us6000t7zp",
     "rupture_time": "2026-06-24T22:05:11Z",
-    "snapshot_time": "2026-06-25T17:26:42Z",
-    "generated_at": "2026-06-25T17:26:42Z",
-    "elapsed_hours_since_rupture": 19.36,
-    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/news/articles_filtered.csv",
-    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report",
+    "snapshot_time": "2026-06-25T22:12:46Z",
+    "generated_at": "2026-06-25T22:12:46Z",
+    "elapsed_hours_since_rupture": 24.13,
+    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625/news/articles_filtered.csv",
+    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625/report",
     "article_counts": {
       "raw": 300,
-      "filtered": 297
+      "filtered": 296
     },
     "collection": {
       "provider": "newscatcher",
       "query": "+(\"earthquake\" AND \"Venezuela\")",
       "from_": "2026-06-24T22:05:11Z",
-      "to_": "2026-06-25T17:26:42Z",
+      "to_": "2026-06-25T22:12:46Z",
       "by_parse_date": true,
       "max_page": 4,
       "page_size": 75
@@ -80,11 +80,11 @@
       "extractive_ratio": 0.25
     },
     "paths": {
-      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/news/articles_filtered.csv",
-      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625_run2/report"
+      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625/news/articles_filtered.csv",
+      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/venezuela_20260624_mainshock/snapshots/latest_20260625/report"
     },
     "error": null
   },
   "event_slug": "venezuela-yumare-2026",
-  "product_slug": "snapshot-20260625-run2"
+  "product_slug": "snapshot-20260625"
 }

@@ -120,7 +120,7 @@ def _clean_current_crumbs(crumbs: List[Dict[str, str]]) -> List[Dict[str, str]]:
 def _product_type(value: str) -> str:
     labels = {
         "snapshot_briefing": "Snapshot briefing",
-        "temporal_recon": "Temporal reconnaissance product",
+        "temporal_recon": "Temporal analysis",
     }
     return labels.get(value, value.replace("_", " ").title() if value else "Product")
 
@@ -218,6 +218,36 @@ def _product_counts(product: Dict[str, Any]) -> Dict[str, Any]:
     return product.get("counts", {}) or {}
 
 
+def _product_type_key(product: Dict[str, Any]) -> str:
+    return str(product.get("product_type", "")).strip().lower()
+
+
+def _is_temporal_product(product: Dict[str, Any]) -> bool:
+    product_type = _product_type_key(product)
+    return product_type.startswith("temporal")
+
+
+def _is_snapshot_product(product: Dict[str, Any]) -> bool:
+    product_type = _product_type_key(product)
+    return product_type.startswith("snapshot")
+
+
+def _product_href(product: Dict[str, Any]) -> str:
+    href = product.get("href")
+    if href:
+        return str(href)
+    return f"products/{escape(str(product['slug']), quote=True)}/"
+
+
+def _product_status_label(event: Dict[str, Any], product: Dict[str, Any]) -> str:
+    label = _product_type(str(product.get("product_type", "")))
+    if product.get("featured"):
+        return label
+    if product.get("slug") == event.get("latest_product_slug"):
+        return "Latest " + label[:1].lower() + label[1:]
+    return label
+
+
 def _read_events() -> List[Dict[str, Any]]:
     events: List[Dict[str, Any]] = []
     for event_file in sorted((ROOT / "events").glob("*/event.json")):
@@ -234,7 +264,12 @@ def _event_sort_key(event: Dict[str, Any]) -> str:
 
 
 def _product_sort_key(product: Dict[str, Any]) -> str:
-    return _sort_datetime(product.get("generated_at") or product.get("title") or product.get("slug"))
+    return _sort_datetime(
+        product.get("snapshot_time")
+        or product.get("generated_at")
+        or product.get("title")
+        or product.get("slug")
+    )
 
 
 def _render_home_timeline(events: Iterable[Dict[str, Any]]) -> str:
@@ -247,25 +282,23 @@ def _render_home_timeline(events: Iterable[Dict[str, Any]]) -> str:
         date = _format_date(event.get("event_date") or event.get("sort_date"))
         timeline_date = _format_timeline_date(event.get("event_date") or event.get("sort_date"))
         products = event.get("products", [])
-        product_count = len(products)
-        has_snapshot_products = any(
-            str(product.get("product_type", "")).startswith("snapshot")
-            for product in products
-        )
-        if product_count and has_snapshot_products:
-            product_label = (
-                f"{product_count} snapshot"
-                if product_count == 1
-                else f"{product_count} snapshots"
+        snapshot_count = sum(1 for product in products if _is_snapshot_product(product))
+        temporal_count = sum(1 for product in products if _is_temporal_product(product))
+        other_count = len(products) - snapshot_count - temporal_count
+        product_labels = []
+        if snapshot_count:
+            product_labels.append(
+                f"{snapshot_count} snapshot"
+                if snapshot_count == 1
+                else f"{snapshot_count} snapshots"
             )
-        elif product_count:
-            product_label = (
-                f"{product_count} product"
-                if product_count == 1
-                else f"{product_count} products"
+        if temporal_count:
+            product_labels.append("Temporal analysis")
+        if other_count:
+            product_labels.append(
+                f"{other_count} product" if other_count == 1 else f"{other_count} products"
             )
-        else:
-            product_label = ""
+        product_label = " · ".join(product_labels)
         meta_bits = _extract_event_meta(event) or [date]
         if product_label:
             meta_bits.append(product_label)
@@ -292,9 +325,8 @@ def _render_home_timeline(events: Iterable[Dict[str, Any]]) -> str:
 def _render_product_timeline_item(event: Dict[str, Any], product: Dict[str, Any]) -> str:
     slug = str(product["slug"])
     title = escape(str(product.get("title", slug)))
-    product_type = escape(_product_type(str(product.get("product_type", ""))))
+    snapshot_time = product.get("snapshot_time")
     generated_at = product.get("generated_at")
-    latest = slug == event.get("latest_product_slug")
     stats = _product_counts(product)
     meta_bits = []
     if generated_at:
@@ -303,8 +335,10 @@ def _render_product_timeline_item(event: Dict[str, Any], product: Dict[str, Any]
         meta_bits.append(f"Sources: {stats['sources']}")
     if stats.get("facts_cited") is not None and stats.get("facts_total") is not None:
         meta_bits.append(f"Facts cited: {stats['facts_cited']}/{stats['facts_total']}")
-    timeline_date = _format_timeline_date(generated_at or product.get("title") or product.get("slug"))
-    tag = "Latest " + product_type if latest else product_type
+    timeline_date = _format_timeline_date(
+        snapshot_time or generated_at or product.get("title") or product.get("slug")
+    )
+    tag = _product_status_label(event, product)
     return f"""
       <article class="timeline-item product-timeline-item">
         <div class="timeline-index" aria-hidden="true">
@@ -315,9 +349,60 @@ def _render_product_timeline_item(event: Dict[str, Any], product: Dict[str, Any]
           <div class="timeline-kicker">{escape(tag)}</div>
           <h2 class="timeline-title">{title}</h2>
           <div class="timeline-meta">{_compact_meta_bits(*meta_bits)}</div>
-          <a class="timeline-link" href="products/{escape(slug, quote=True)}/">Open snapshot<span aria-hidden="true">&rarr;</span></a>
+          <a class="timeline-link" href="{escape(_product_href(product), quote=True)}">Open snapshot<span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
+    """.strip()
+
+
+def _render_temporal_feature(event: Dict[str, Any], products: Iterable[Dict[str, Any]]) -> str:
+    cards = []
+    for product in sorted(products, key=_product_sort_key, reverse=True):
+        slug = str(product["slug"])
+        title = escape(str(product.get("title", slug)))
+        generated_at = product.get("generated_at")
+        stats = _product_counts(product)
+        meta_bits = []
+        if generated_at:
+            meta_bits.append(f"Generated { _format_generated(generated_at) }")
+        if stats.get("snapshots") is not None:
+            count = stats["snapshots"]
+            meta_bits.append(f"{count} snapshot" if count == 1 else f"{count} snapshots")
+        if stats.get("tracks") is not None:
+            meta_bits.append(f"{stats['tracks']} temporal tracks")
+        if stats.get("source_references") is not None:
+            meta_bits.append(f"{stats['source_references']} sources")
+        summary = escape(str(product.get("summary", "")))
+        cards.append(
+            f"""
+        <article class="featured-product">
+          <div class="featured-product-kicker">{escape(_product_status_label(event, product))}</div>
+          <h2>{title}</h2>
+          <div class="timeline-meta">{_compact_meta_bits(*meta_bits)}</div>
+          {f'<p>{summary}</p>' if summary else ''}
+          <a class="timeline-link" href="{escape(_product_href(product), quote=True)}">Open temporal analysis<span aria-hidden="true">&rarr;</span></a>
+        </article>
+            """.strip()
+        )
+
+    if not cards:
+        return ""
+
+    return f"""
+      <section class="featured-product-section" id="temporal-analysis" aria-label="Temporal analysis">
+        <div class="section-heading">
+          <h2>Temporal analysis</h2>
+        </div>
+        <div class="featured-product-list">
+          {"".join(cards)}
+        </div>
+      </section>
+    """.strip()
+
+
+def _render_snapshot_empty() -> str:
+    return """
+        <p class="timeline-empty">Snapshot products will appear here after they are published for this event.</p>
     """.strip()
 
 
@@ -326,6 +411,15 @@ def _render_product_meta(event: Dict[str, Any], manifest: Dict[str, Any]) -> str
     if manifest.get("generated_at"):
         pills.append(f"Generated {manifest['generated_at']}")
     counts = manifest.get("counts", {})
+    if _is_temporal_product(manifest):
+        if counts.get("snapshots") is not None:
+            count = counts["snapshots"]
+            pills.append(f"{count} snapshot" if count == 1 else f"{count} snapshots")
+        if counts.get("tracks") is not None:
+            pills.append(f"{counts['tracks']} temporal tracks")
+        if counts.get("source_references") is not None:
+            pills.append(f"{counts['source_references']} sources")
+        return "\n          ".join(f"<span>{escape(str(pill))}</span>" for pill in pills)
     if counts.get("sources") is not None:
         pills.append(f"{counts['sources']} sources")
     if counts.get("facts_cited") is not None and counts.get("facts_total") is not None:
@@ -344,6 +438,10 @@ def _product_toc(manifest: Dict[str, Any]) -> List[Dict[str, str]]:
 
 
 def _build_product_page(event: Dict[str, Any], product: Dict[str, Any]) -> None:
+    if product.get("standalone"):
+        print(f"PRESERVE standalone product page: {event['slug']}/{product['slug']}")
+        return
+
     product_dir = Path(event["_dir"]) / "products" / str(product["slug"])
     content_path = product_dir / "content.html"
     manifest_path = product_dir / "manifest.json"
@@ -392,10 +490,20 @@ def _build_event_page(event: Dict[str, Any]) -> None:
         print(f"PRESERVE legacy event page: {event['slug']}")
         return
 
+    temporal_products = [product for product in products if _is_temporal_product(product)]
+    snapshot_products = [product for product in products if _is_snapshot_product(product)]
     product_timeline = "\n\n".join(
         _render_product_timeline_item(event, product)
-        for product in sorted(products, key=_product_sort_key, reverse=True)
+        for product in sorted(snapshot_products, key=_product_sort_key, reverse=True)
     )
+    if not product_timeline:
+        product_timeline = _render_snapshot_empty()
+
+    drawer_links = [{"label": "Event Overview", "href": "#event-overview"}]
+    if temporal_products:
+        drawer_links.append({"label": "Temporal Analysis", "href": "#temporal-analysis"})
+    drawer_links.append({"label": "Snapshots", "href": "#snapshots"})
+
     page = _template(
         "event.html",
         {
@@ -406,16 +514,12 @@ def _build_event_page(event: Dict[str, Any]) -> None:
                     + [{"label": str(event.get("title", event["slug"]))}]
                 )
             ),
-            "content_drawer": _render_content_drawer(
-                [
-                    {"label": "Event Overview", "href": "#event-overview"},
-                    {"label": "Snapshots", "href": "#snapshots"},
-                ]
-            ),
+            "content_drawer": _render_content_drawer(drawer_links),
             "brand_strip": BRAND_STRIP,
             "event_type": escape(str(event.get("event_type", "APHR event"))),
             "event_title": escape(str(event.get("title", event["slug"]))),
             "event_description": escape(_event_meta_text(event)),
+            "temporal_feature": _render_temporal_feature(event, temporal_products),
             "product_timeline": product_timeline,
         },
     )

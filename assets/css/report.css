@@ -4,7 +4,7 @@
 }
 
 .report-header {
-  padding: 18px 0;
+  padding: 28px 0 18px;
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
   display: grid;
   justify-items: center;
   gap: 7px;
-  margin: 6px auto 10px;
+  margin: 0 auto 10px;
   color: var(--ink);
 }
 
@@ -55,7 +55,7 @@
   color: #2c3437;
 }
 
-.aphr-report section {
+.aphr-report > section {
   margin: 0 0 22px;
   padding: 22px;
   background: #ffffff;
@@ -200,6 +200,312 @@
 
 .aphr-reference-highlight {
   animation: aphrefade 2.2s ease-out;
+}
+
+.aphr-temporal-recon h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.aphr-temporal-recon .narrative-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.aphr-temporal-recon .region-info-body h3 {
+  margin: 4px 0 10px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.aphr-temporal-recon .region-info-body h4 {
+  margin: 14px 0 8px;
+  color: var(--teal);
+  font-size: 14px;
+}
+
+.aphr-temporal-recon .overview-figures,
+.aphr-temporal-recon .pager-figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 16px 0 4px;
+}
+
+.aphr-temporal-recon .introduction .overview-figures {
+  grid-template-columns: minmax(0, 1fr);
+  margin: 18px 0 14px;
+}
+
+.aphr-temporal-recon figure {
+  margin: 0;
+  padding: 8px;
+  background: #fbfcfb;
+  border: 1px solid var(--line);
+}
+
+.aphr-temporal-recon .introduction figure {
+  padding: 10px;
+}
+
+.aphr-temporal-recon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.aphr-temporal-recon .introduction img {
+  max-height: 520px;
+}
+
+.aphr-temporal-recon .official-event-link {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.aphr-temporal-recon .pager-context {
+  margin-top: 4px;
+  padding-top: 2px;
+  border-top: 1px solid var(--line);
+}
+
+.aphr-temporal-recon .pager-summary,
+.aphr-temporal-recon .metric-summary {
+  padding: 10px 12px;
+  background: #f7f5ee;
+  border-left: 4px solid var(--amber);
+  color: #394247;
+}
+
+.aphr-temporal-recon .detail-stack {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.aphr-temporal-recon .detail-group {
+  margin: 0;
+  padding: 14px 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.aphr-temporal-recon .detail-group h3 {
+  margin-top: 0;
+}
+
+.aphr-temporal-recon .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.aphr-temporal-recon .info-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13px 14px;
+  background: #fbfcfb;
+  border: 1px solid var(--line);
+}
+
+.aphr-temporal-recon .info-card h4 {
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.aphr-temporal-recon .card-meta {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.aphr-temporal-recon .card-summary {
+  margin: 0 0 10px;
+  color: #394247;
+  font-size: 14px;
+}
+
+.aphr-temporal-recon .drawer-trigger {
+  appearance: none;
+  margin-top: auto;
+  padding: 7px 10px;
+  background: #eef6f4;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.aphr-temporal-recon .drawer-trigger:hover {
+  background: #dcece8;
+}
+
+.aphr-temporal-recon .timeline {
+  margin: 0;
+  padding: 4px 0 12px;
+  list-style: none;
+}
+
+.aphr-temporal-recon .timeline li {
+  position: relative;
+  padding: 0 0 12px 14px;
+  border-left: 2px solid #b6c5be;
+}
+
+.aphr-temporal-recon .timeline li::before {
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  content: "";
+}
+
+.aphr-temporal-recon time {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.aphr-temporal-recon .relation {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 7px;
+  background: var(--teal);
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.aphr-temporal-recon .caveat {
+  display: inline-block;
+  padding: 3px 7px;
+  background: #fff3ce;
+  color: #684300;
+  font-size: 12px;
+}
+
+.aphr-temporal-recon table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.aphr-temporal-recon th,
+.aphr-temporal-recon td {
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.aphr-temporal-recon th {
+  background: #eef1eb;
+}
+
+.aphr-temporal-recon .drawer-note {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.aphr-temporal-recon .scope-notes {
+  color: #4a4f52;
+}
+
+.drawer-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+}
+
+.drawer-shell.is-open {
+  pointer-events: auto;
+}
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 28, 30, 0.32);
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.drawer-shell.is-open .drawer-backdrop {
+  opacity: 1;
+}
+
+.drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: min(560px, 100vw);
+  height: 100dvh;
+  flex-direction: column;
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  transform: translateX(calc(100% + 48px));
+  transition: transform 160ms ease;
+}
+
+.drawer-shell.is-open .drawer-panel {
+  box-shadow: -18px 0 40px rgba(22, 31, 34, 0.18);
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.drawer-close {
+  width: 34px;
+  height: 34px;
+  background: #f6f8f6;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.drawer-body {
+  overflow-y: auto;
+  padding: 18px 20px 26px;
+}
+
+.drawer-summary {
+  padding: 10px 12px;
+  background: #f7f9f7;
+  border-left: 4px solid var(--teal);
+  color: #394247;
 }
 
 @keyframes aphrefade {

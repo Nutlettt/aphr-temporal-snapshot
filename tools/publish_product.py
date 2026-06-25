@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import json
 import shutil
 from pathlib import Path
@@ -62,9 +63,94 @@ def _copy_bundle(bundle_dir: Path, destination: Path, force: bool) -> None:
 def _format_product_type(value: str) -> str:
     labels = {
         "snapshot_briefing": "Snapshot briefing",
-        "temporal_recon": "Temporal reconnaissance product",
+        "temporal_recon": "Temporal analysis",
     }
     return labels.get(value, value.replace("_", " ").title() if value else "Product")
+
+
+def _is_temporal_product(manifest: Dict[str, Any]) -> bool:
+    return str(manifest.get("product_type", "")).strip().lower().startswith("temporal")
+
+
+def _is_snapshot_product(manifest: Dict[str, Any]) -> bool:
+    return str(manifest.get("product_type", "")).strip().lower().startswith("snapshot")
+
+
+def _parse_datetime(value: Any) -> datetime | None:
+    if not value:
+        return None
+    text = str(value).strip()
+    try:
+        if text.endswith("Z"):
+            text = text[:-1] + "+00:00"
+        return datetime.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+def _format_month_day_year(value: datetime) -> str:
+    return f"{value.strftime('%b')} {value.day}, {value.year}"
+
+
+def _format_datetime_label(value: Any) -> str:
+    parsed = _parse_datetime(value)
+    if not parsed:
+        return str(value or "")
+    if parsed.hour == 0 and parsed.minute == 0 and parsed.second == 0:
+        return _format_month_day_year(parsed)
+    zone = " UTC" if parsed.tzinfo else ""
+    return f"{_format_month_day_year(parsed)} {parsed.strftime('%H:%M')}{zone}"
+
+
+def _sort_datetime(value: Any) -> str:
+    parsed = _parse_datetime(value)
+    if parsed:
+        return parsed.isoformat()
+    return str(value or "")
+
+
+def _snapshot_time(manifest: Dict[str, Any]) -> str:
+    return str((manifest.get("snapshot") or {}).get("snapshot_time") or "")
+
+
+def _product_sort_key(product: Dict[str, Any]) -> str:
+    return _sort_datetime(
+        product.get("snapshot_time")
+        or product.get("generated_at")
+        or product.get("title")
+        or product.get("slug")
+    )
+
+
+def _default_product_title(manifest: Dict[str, Any], product_slug: str) -> str:
+    if _is_snapshot_product(manifest) and _snapshot_time(manifest):
+        return f"Snapshot briefing · {_format_datetime_label(_snapshot_time(manifest))}"
+    return str(manifest.get("title") or product_slug)
+
+
+def _should_set_latest_snapshot(
+    event: Dict[str, Any], product: Dict[str, Any], explicit: bool
+) -> bool:
+    if explicit:
+        return True
+    if not _is_snapshot_product(product):
+        return False
+
+    latest_slug = event.get("latest_product_slug")
+    if not latest_slug:
+        return True
+
+    latest_product = next(
+        (
+            item
+            for item in event.get("products", [])
+            if item.get("slug") == latest_slug
+        ),
+        None,
+    )
+    if not latest_product or not _is_snapshot_product(latest_product):
+        return True
+    return _product_sort_key(product) >= _product_sort_key(latest_product)
 
 
 def _default_event_meta(manifest: Dict[str, Any], event_date: str) -> str:
@@ -81,6 +167,19 @@ def _default_event_meta(manifest: Dict[str, Any], event_date: str) -> str:
 
 def _default_product_summary(manifest: Dict[str, Any]) -> str:
     counts = manifest.get("counts", {})
+    if _is_temporal_product(manifest):
+        summary_bits = []
+        if counts.get("snapshots") is not None:
+            count = counts["snapshots"]
+            summary_bits.append(f"{count} snapshot" if count == 1 else f"{count} snapshots")
+        if counts.get("tracks") is not None:
+            summary_bits.append(f"{counts['tracks']} temporal tracks")
+        if counts.get("source_references") is not None:
+            summary_bits.append(f"{counts['source_references']} sources")
+        if summary_bits:
+            return "Aggregated APHR temporal analysis built from " + ", ".join(summary_bits) + "."
+        return "Aggregated APHR temporal analysis built from multiple snapshot briefings."
+
     source_count = counts.get("sources")
     fact_count = counts.get("facts_cited")
     total_facts = counts.get("facts_total")
@@ -142,15 +241,21 @@ def publish(args: argparse.Namespace) -> Path:
 
     product = {
         "slug": args.product_slug,
-        "title": args.product_title or manifest.get("title") or args.product_slug,
+        "title": args.product_title or _default_product_title(manifest, args.product_slug),
         "product_type": manifest.get("product_type", ""),
         "generated_at": manifest.get("generated_at"),
         "counts": manifest.get("counts", {}),
         "summary": args.product_summary or _default_product_summary(manifest),
         "manifest_path": f"products/{args.product_slug}/manifest.json",
     }
+    snapshot_time = _snapshot_time(manifest)
+    if snapshot_time:
+        product["snapshot_time"] = snapshot_time
+    if _is_temporal_product(manifest):
+        product["featured"] = True
+
     event["products"] = _upsert_product(event.get("products", []), product)
-    if args.set_latest or not event.get("latest_product_slug"):
+    if _should_set_latest_snapshot(event, product, args.set_latest):
         event["latest_product_slug"] = args.product_slug
     _write_json(event_json_path, event)
 
