@@ -5,18 +5,18 @@
   "event_type": "Earthquake",
   "event_date": "2024-01-01",
   "tag": "Snapshot briefing",
-  "meta": "M7.5 · Jan 1, 2024 · 47 sources",
+  "meta": "M7.5 · Jan 1, 2024 · 31 sources",
   "description": "APHR snapshot briefing for the first 10 days after the 2024 Noto Peninsula, Japan earthquake.",
   "products": [
     {
       "slug": "snapshot-first10d-20240111",
       "title": "Snapshot briefing · first 10 days",
       "product_type": "snapshot_briefing",
-      "generated_at": "2026-06-13T18:24:49.935849",
+      "generated_at": "2026-06-13T18:03:37.307911",
       "counts": {
-        "facts_cited": 54,
-        "facts_total": 186,
-        "sources": 47
+        "facts_cited": 37,
+        "facts_total": 183,
+        "sources": 31
       },
       "summary": "APHR snapshot briefing generated from the analyzed first-10-day Japan run used in the paper.",
       "manifest_path": "products/snapshot-first10d-20240111/manifest.json"

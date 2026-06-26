@@ -6,7 +6,7 @@
   "title": "Snapshot briefing · first 10 days",
   "event_title": "2024 Noto Peninsula, Japan",
   "event_date": "2024-01-01",
-  "generated_at": "2026-06-13T18:24:49.935849",
+  "generated_at": "2026-06-13T18:03:37.307911",
   "model": "gpt-5.5",
   "sections": [
     {
@@ -31,9 +31,9 @@
     }
   ],
   "counts": {
-    "facts_cited": 54,
-    "facts_total": 186,
-    "sources": 47
+    "facts_cited": 37,
+    "facts_total": 183,
+    "sources": 31
   },
   "assets": {
     "intensity_image": "assets/intensity.jpg",
@@ -44,7 +44,7 @@
   },
   "source": {
     "workflow": "aphr-export-web-bundle",
-    "report_dir": "reports/2023-12-31_Japan_qualify_2",
+    "report_dir": "reports/2023-12-31_Japan_qualify_1",
     "snapshot_dir": null,
     "standalone_html": "briefing_abstractive.html",
     "standalone_pdf": "briefing_abstractive.pdf"
