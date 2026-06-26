@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "bundle_type": "aphr_web_product",
+  "product_type": "snapshot_briefing",
+  "content_path": "content.html",
+  "title": "Snapshot briefing · first 10 days",
+  "event_title": "2024 Noto Peninsula, Japan",
+  "event_date": "2024-01-01",
+  "generated_at": "2026-06-26T20:18:37Z",
+  "model": "gpt-5.5",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "building",
+      "title": "Building Damage"
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure Impact"
+    },
+    {
+      "id": "resilience",
+      "title": "Resilience and Recovery"
+    },
+    {
+      "id": "references",
+      "title": "References"
+    }
+  ],
+  "counts": {
+    "facts_cited": 41,
+    "facts_total": 177,
+    "sources": 33
+  },
+  "assets": {
+    "intensity_image": "assets/intensity.jpg",
+    "pager_images": [
+      "assets/pager_1.png",
+      "assets/pager_2.png"
+    ]
+  },
+  "source": {
+    "workflow": "aphr-export-web-bundle",
+    "report_dir": "experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111/report",
+    "snapshot_dir": "experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111",
+    "standalone_html": "briefing_abstractive.html",
+    "standalone_pdf": "briefing_abstractive.pdf"
+  },
+  "snapshot": {
+    "mode": "live_snapshot",
+    "status": "completed",
+    "experiment_name": "japan_20240101_noto_first10d",
+    "snapshot_id": "first10d_20240111",
+    "event_id": "us6000m0xl",
+    "rupture_time": "2024-01-01T07:10:09Z",
+    "snapshot_time": "2024-01-11T07:10:09Z",
+    "generated_at": "2026-06-26T20:13:03Z",
+    "elapsed_hours_since_rupture": 240.0,
+    "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111/news/articles_filtered.csv",
+    "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111/report",
+    "article_counts": {
+      "raw": 300,
+      "filtered": 293
+    },
+    "collection": {
+      "provider": "newscatcher",
+      "query": "+(\"earthquake\" AND \"Japan\")",
+      "from_": "2024-01-01T07:10:09Z",
+      "to_": "2024-01-11T07:10:09Z",
+      "by_parse_date": true,
+      "max_page": 4,
+      "page_size": 75
+    },
+    "generation": {
+      "abstractive_model": "gpt-5.5",
+      "abstractive_temperature": 1,
+      "extractive_ratio": 0.25
+    },
+    "paths": {
+      "news_file": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111/news/articles_filtered.csv",
+      "report_dir": "/home/nutlettt/research/TAR/auto-vast-dev/experiments/japan_20240101_noto_first10d/snapshots/first10d_20240111/report"
+    },
+    "error": null
+  },
+  "event_slug": "japan-noto-peninsula-2024",
+  "product_slug": "snapshot-first10d-20240111"
+}
